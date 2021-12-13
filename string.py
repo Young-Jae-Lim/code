@@ -89,3 +89,43 @@ for indicies_training, indicies_test in kfold.split(indicies):
 print(sum(f1_score_1)/len(f1_score_1))
 print(sum(f1_score_2)/len(f1_score_2))
 print(sum(f1_score_3)/len(f1_score_3))
+
+# splitpoint = int(len(x)/2)
+#
+# training_x, test_x = x[:splitpoint], x[splitpoint:]
+# training_y, test_y = y[:splitpoint], y[splitpoint:]
+#
+# classifier = RandomForestClassifier()
+# classifier.fit(training_x,training_y)
+# with open('saved_classifier.pkl','wb') as f:
+#     pickle.dump((classifier, hasher), f)
+
+
+# scores = classifier.predict_proba(test_x)[:,-1]
+# y_pred = [0 if s < 0.5 else 1 for s in scores]
+# print(y_pred)
+# f1 = f1_score(test_y,y_pred)
+# print(f1)
+
+
+# fpr, tpr, thresholds = metrics.roc_curve(test_y, scores)
+# print(fpr)
+# print(tpr)
+# print(thresholds)
+
+# pyplot.plot(fpr,tpr,'r-')
+# pyplot.xlabel("Detector false positive rate")
+# pyplot.ylabel("Detector true positive rate")
+# pyplot.title("Detector ROC Curve")
+# pyplot.savefig("roc_curves_string.png")
+
+#
+# test = get_string_features('./Backdoor.Win32.Agent.afxs_ed7c.exe', 3, hasher)
+# score = classifier.predict_proba([test])[:,-1]
+# print(score)
+
+# print(len(benignware_paths))
+# print(len(malware_paths))
+
+# features = get_string_features('./Backdoor.Win32.Agent.afxs_ed7c.exe', 3, hasher)
+# print(len(features))
